@@ -16,7 +16,7 @@ A sample node.js Docker app on Alpine Linux using [docker][].
 -   Run app:
 
         make run-container
-        # docker run -p 8080:8080 -d alvaro/docker-node
+        # docker run -p 8080:8080 -d --name docker-node alvaro/docker-node
 
 -   Get mapped port (last column) using, e.g. 8080:
 
@@ -29,11 +29,16 @@ A sample node.js Docker app on Alpine Linux using [docker][].
 -   Test app using the port Docker exposed, e.g. 8080:
 
         make test
-	# curl -i  http://localhost:8080/alvaro?hello=world
+        # curl -i  http://localhost:8080/alvaro?hello=world
+
+-   Clean up house
+        
+        # docker stop docker-node
+        # docker rm docker-node
 
 -  You should expect something like this:
 
-#  Build
+       # build step output
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker build -t alvaro/docker-node .
 Sending build context to Docker daemon 126.5 kB
@@ -129,14 +134,14 @@ Removing intermediate container 72e49fa48085
 Successfully built b716dbbb504f
 ```
     
-# run
+       # run step output
 
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 8080:8080 -d alvaro/docker-node
 89b2652ec2c1f02d0101cc7c17e12f3a1c22b7c2a5f13f77fcc07c5dbeceaf2c
 ```
 
-# test
+       # test step output
 
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker ps
