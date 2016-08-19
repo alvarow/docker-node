@@ -1,6 +1,6 @@
 # docker-node
 
-A sample node.js Docker app on Alpine Linux using [docker][].
+A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 
 ## Prerequisites
 
@@ -137,7 +137,7 @@ Successfully built b716dbbb504f
        # run step output
 
 ```
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 8080:8080 -d alvaro/docker-node
+regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 8080:8080 -d --name docker-node alvaro/docker-node
 89b2652ec2c1f02d0101cc7c17e12f3a1c22b7c2a5f13f77fcc07c5dbeceaf2c
 ```
 
@@ -159,6 +159,6 @@ Connection: keep-alive
 
 It Works!!
 ```
-
+[alpine]: https://hub.docker.com/_/alpine/
 [node-js-download]: http://nodejs.org/download/
 [docker]: http://docker.io
