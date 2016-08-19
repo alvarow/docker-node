@@ -8,9 +8,6 @@ A sample node.js Docker app on Alpine Linux using [docker][].
 
 ## Getting Started
 
-        make install
-	# npm install
-
 -   Build docker image:
 
         make build
