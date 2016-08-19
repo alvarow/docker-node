@@ -23,8 +23,8 @@ A sample node.js Docker app on Alpine Linux using [docker][].
         docker ps
 
         > # Example
-        > ID                  IMAGE                           COMMAND              CREATED             STATUS              PORTS
-        > ecce33b30ebf        gasi/centos-node-hello:latest   node /src/index.js   10 seconds ago      Up 9 seconds        49160->8080
+        > CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  
+        > 89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:8080->8080/tcp   
 
 -   Test app using the port Docker exposed, e.g. 8080:
 
