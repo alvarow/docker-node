@@ -1,0 +1,18 @@
+{
+  "name": "docker-node",
+  "author": "Alvaro Reguly",
+  "version": "1.0.0",
+  "description": "Get started with node.js and Docker",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.4.0",
+    "npm": "^2.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "latest"
+  }
+}
