@@ -16,20 +16,20 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 -   Run app:
 
         make run-container
-        # docker run -p 8080:8080 -d --name docker-node alvaro/docker-node
+        # docker run -p 3000:3000 -d --name docker-node alvaro/docker-node
 
--   Get mapped port (last column) using, e.g. 8080:
+-   Get mapped port (last column) using, e.g. 3000:
 
         docker ps
 
         > # Example
         > CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  
-        > 89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:8080->8080/tcp   
+        > 89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   
 
--   Test app using the port Docker exposed, e.g. 8080:
+-   Test app using the port Docker exposed, e.g. 3000:
 
         make test
-        # curl -i  http://localhost:8080/alvaro?hello=world
+        # curl -i  http://localhost:3000/alvaro?hello=world
 
 -   Clean up house
         
@@ -86,7 +86,7 @@ Step 5 : WORKDIR /app
  ---> Running in c58e27bd8a88
  ---> aaadc1f4f741
 Removing intermediate container c58e27bd8a88
-Step 6 : EXPOSE 8080
+Step 6 : EXPOSE 3000
  ---> Running in 0d98f58c1d70
  ---> 90644ed2ecfb
 Removing intermediate container 0d98f58c1d70
@@ -137,7 +137,7 @@ Successfully built b716dbbb504f
        # run step output
 
 ```
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 8080:8080 -d --name docker-node alvaro/docker-node
+regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 3000:3000 -d --name docker-node alvaro/docker-node
 89b2652ec2c1f02d0101cc7c17e12f3a1c22b7c2a5f13f77fcc07c5dbeceaf2c
 ```
 
@@ -146,9 +146,9 @@ regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 8080:8080 -d --name docke
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker ps
 CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                    NAMES
-89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:8080->8080/tcp   elegant_liskov
+89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   elegant_liskov
 
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ curl -i localhost:8080/alvaro?hello=world
+regulya@ROSELCDV0001LHJ:~/docker/alvaro$ curl -i localhost:3000/alvaro?hello=world
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
