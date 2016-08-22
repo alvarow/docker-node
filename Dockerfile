@@ -16,7 +16,8 @@ EXPOSE  3000
 # Install app and dependencies
 ADD .npmrc /root/.npmrc
 ADD . /app
-RUN cd /app; npm install ; npm install -g pm2
+RUN cd /app; npm install
+#RUN npm install -g pm2
 RUN apk del build-dependencies
 
 CMD [ "node", "index.js" ]

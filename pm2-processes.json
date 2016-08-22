@@ -1,0 +1,17 @@
+{
+  "apps": [{
+    "name": "docker-node",
+    "max_memory_restart": "128M",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss SSS",
+    "script": "index.js",
+    "out_file": "stdout.log",
+    "error_file": "stderr.log",
+    "port": "3000",
+    "env": {
+      "UV_THREADPOOL_SIZE": "64",
+      "NODE_ENV": "production",
+      "APP_NAME": "docker-node",
+      "PORT": "3000",
+    }
+  }]
+}
