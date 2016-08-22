@@ -1,11 +1,12 @@
 # docker-node
 
-A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
+A sample node.js app on [Alpine][alpine] Linux using [Docker][docker].
 
 <img src="logo-d-n.jpg" width="640" height="285" />
 
 ## Prerequisites
 
+- [Docker][docker] - [Mac tutorial](https://docs.docker.com/docker-for-mac/)
 - [node.js & npm][node-js-download]
 
 ## Getting Started

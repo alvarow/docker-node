@@ -1,8 +1,8 @@
 var express = require('express');
 
 // For Docker
-process.on('SIGINT', function() { process.exit(); }); // Ctrl+C
-process.on('SIGTERM', function() { process.exit(); }); // docker stop
+process.on('SIGINT', function() { console.log('Got SIGINT... Quitting...'); process.exit(); }); // Ctrl+C
+process.on('SIGTERM', function() { console.log('Got SIGTERM ... Quitting...'); process.exit(); }); // docker stop
 
 // App
 var app = express();
