@@ -13,9 +13,13 @@ run-container:
 test:
 	curl -i http://localhost:3000/alvaro?hello=world
 
+logs:
+	docker logs docker-node -f
+
 clean:
 	rm -rf node_modules
 	docker stop docker-node
+	docker inspect -f '{{.State.ExitCode}}' docker-node
 	docker rm docker-node
 	docker rmi alvaro/docker-node
 

@@ -2,7 +2,7 @@
 
 A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 
-<img src="docker-node.jpg" width="640" height="285" />
+<img src="logo-d-n.jpg" width="640" height="285" />
 
 ## Prerequisites
 
@@ -57,7 +57,7 @@ Step 3 : VOLUME /var/cache/apk /root/.npm
  ---> Running in d795e94ea884
  ---> ef1d6b049451
 Removing intermediate container d795e94ea884
-Step 4 : RUN apk add --update g++ nodejs-lts g++ ca-certificates
+Step 4 : RUN apk add --update g++ nodejs-lts ca-certificates
  ---> Running in 2ce58f9f60a4
 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
 fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/community/x86_64/APKINDEX.tar.gz

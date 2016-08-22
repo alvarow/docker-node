@@ -10,6 +10,7 @@
     "npm": "^2.0.0"
   },
   "scripts": {
+    "prestart": "npm install",
     "start": "node index.js"
   },
   "dependencies": {
