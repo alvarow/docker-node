@@ -6,7 +6,7 @@ process.on('SIGTERM', function() { process.exit(); }); // docker stop
 
 // App
 var app = express();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.npm_package_config_port || 3000);
 app.get('/*', function (req, res) {
   res.send('It Works!!\n');
   console.log('It Works!! Path Hit: ' + req.url);
