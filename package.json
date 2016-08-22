@@ -9,9 +9,11 @@
     "node": ">=4.4.0",
     "npm": "^2.0.0"
   },
+  "config" : { "port" : "3000" },
   "scripts": {
     "prestart": "npm install",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "curl -i http://localhost:$npm_package_config_port/npmtest?port=$npm_package_config_port"
   },
   "dependencies": {
     "express": "latest"
