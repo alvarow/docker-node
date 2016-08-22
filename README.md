@@ -31,11 +31,11 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 -   Test app using the port Docker exposed, e.g. 3000:
 
         make test
-        > curl -i  http://localhost:3000/alvaro?hello=world
+        # curl -i  http://localhost:3000/alvaro?hello=world
 
 -   Clean up house:
        
-	make clean 
+        make clean 
         # docker stop docker-node
         # docker rm docker-node
         # docker rmi alvaro/docker-node
