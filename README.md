@@ -22,7 +22,7 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 
 -   Get mapped port (last column) using, e.g. 3000:
 
-        `docker ps`
+        # docker ps
 
         > # Example
         > CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  
@@ -36,9 +36,9 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 -   Clean up house:
        
 	make clean 
-        > docker stop docker-node
-        > docker rm docker-node
-        > docker rmi alvaro/docker-node
+        # docker stop docker-node
+        # docker rm docker-node
+        # docker rmi alvaro/docker-node
 
 -  You should expect something like this:
 
