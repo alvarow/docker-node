@@ -15,5 +15,18 @@
   },
   "dependencies": {
     "express": "latest"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alvarow/docker-node"
+  },
+  "keywords": [
+    "docker",
+    "node",
+    "node.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/alvarow/docker-node/issues"
+  },
+  "homepage": "https://github.com/alvarow/docker-node"
 }
