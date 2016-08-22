@@ -2,6 +2,8 @@
 
 A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 
+<img src="docker-node.jpg" width="640" height="285" />
+
 ## Prerequisites
 
 - [node.js & npm][node-js-download]
@@ -20,7 +22,7 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 
 -   Get mapped port (last column) using, e.g. 3000:
 
-        docker ps
+        `docker ps`
 
         > # Example
         > CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  
@@ -29,16 +31,19 @@ A sample node.js Docker app on [Alpine][alpine] Linux using [docker][].
 -   Test app using the port Docker exposed, e.g. 3000:
 
         make test
-        # curl -i  http://localhost:3000/alvaro?hello=world
+        > curl -i  http://localhost:3000/alvaro?hello=world
 
--   Clean up house
-        
-        # docker stop docker-node
-        # docker rm docker-node
+-   Clean up house:
+       
+	make clean 
+        > docker stop docker-node
+        > docker rm docker-node
+        > docker rmi alvaro/docker-node
 
 -  You should expect something like this:
 
-       # build step output
+ **build step output**
+
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker build -t alvaro/docker-node .
 Sending build context to Docker daemon 126.5 kB
@@ -134,14 +139,14 @@ Removing intermediate container 72e49fa48085
 Successfully built b716dbbb504f
 ```
     
-       # run step output
+**run step output**
 
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 3000:3000 -d --name docker-node alvaro/docker-node
 89b2652ec2c1f02d0101cc7c17e12f3a1c22b7c2a5f13f77fcc07c5dbeceaf2c
 ```
 
-       # test step output
+**test step output**
 
 ```
 regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker ps
