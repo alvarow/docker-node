@@ -23,5 +23,7 @@ clean:
 	docker rm docker-node
 	docker rmi alvaro/docker-node
 
+#commit:
+#	docker commit -m "First version" -a "Alvaro Reguly" docker-node alvarow/docker-node:v1.0
 
 .PHONY: install build run test clean
