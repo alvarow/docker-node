@@ -14,12 +14,12 @@ A sample node.js app on [Alpine][alpine] Linux using [Docker][docker].
 -   Build docker image:
 
         make build
-        # docker build -t alvaro/docker-node .
+        # docker build -t alvarow/docker-node .
 
 -   Run app:
 
         make run-container
-        # docker run -p 3000:3000 -d --name docker-node alvaro/docker-node
+        # docker run -p 3000:3000 -d --name docker-node alvarow/docker-node
 
 -   Get mapped port (last column) using, e.g. 3000:
 
@@ -27,26 +27,26 @@ A sample node.js app on [Alpine][alpine] Linux using [Docker][docker].
 
         > # Example
         > CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                  
-        > 89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   
+        > 89b2652ec2c1        alvarow/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   
 
 -   Test app using the port Docker exposed, e.g. 3000:
 
         make test
-        # curl -i  http://localhost:3000/alvaro?hello=world
+        # curl -i  http://localhost:3000/alvarow?hello=world
 
 -   Clean up house:
        
         make clean 
         # docker stop docker-node
         # docker rm docker-node
-        # docker rmi alvaro/docker-node
+        # docker rmi alvarow/docker-node
 
 -  You should expect something like this:
 
  **build step output**
 
 ```
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker build -t alvaro/docker-node .
+regulya@ROSELCDV0001LHJ:~/docker/alvarow$ docker build -t alvarow/docker-node .
 Sending build context to Docker daemon 126.5 kB
 Step 1 : FROM alpine:latest
  ---> 4e38e38c8ce0
@@ -143,18 +143,18 @@ Successfully built b716dbbb504f
 **run step output**
 
 ```
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker run -p 3000:3000 -d --name docker-node alvaro/docker-node
+regulya@ROSELCDV0001LHJ:~/docker/alvarow$ docker run -p 3000:3000 -d --name docker-node alvarow/docker-node
 89b2652ec2c1f02d0101cc7c17e12f3a1c22b7c2a5f13f77fcc07c5dbeceaf2c
 ```
 
 **test step output**
 
 ```
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ docker ps
+regulya@ROSELCDV0001LHJ:~/docker/alvarow$ docker ps
 CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                    NAMES
-89b2652ec2c1        alvaro/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   elegant_liskov
+89b2652ec2c1        alvarow/docker-node   "npm start"         4 seconds ago       Up 3 seconds        0.0.0.0:3000->3000/tcp   elegant_liskov
 
-regulya@ROSELCDV0001LHJ:~/docker/alvaro$ curl -i localhost:3000/alvaro?hello=world
+regulya@ROSELCDV0001LHJ:~/docker/alvarow$ curl -i localhost:3000/alvarow?hello=world
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
