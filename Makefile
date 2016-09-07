@@ -19,13 +19,19 @@ logs:
 stop:
 	docker stop docker-node
 	docker inspect -f '{{.State.ExitCode}}' docker-node
+	docker rm docker-node
 
 clean:  stop
 	rm -rf node_modules
-	docker rm docker-node
 	docker rmi alvarow/docker-node
 
-#commit:
-#	docker commit -m "First version" -a "Alvaro Reguly" docker-node alvaroww/docker-node:v1.0
+pull:
+	docker pull alvarow/docker-node
 
-.PHONY: install build run run-container test logs stop clean commit
+commit:
+	docker commit -m "First version" -a "Alvaro Reguly" docker-node alvarow/docker-node:v1.0
+
+push:
+	docker push alvarow/docker-node:latest
+
+.PHONY: install build run run-container test logs stop clean pull commit push
